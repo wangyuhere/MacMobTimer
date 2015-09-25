@@ -1,0 +1,493 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1EE77E0A1BB5C6D100E30B15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE77E091BB5C6D100E30B15 /* AppDelegate.swift */; };
+		1EE77E0C1BB5C6D100E30B15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EE77E0B1BB5C6D100E30B15 /* Assets.xcassets */; };
+		1EE77E0F1BB5C6D100E30B15 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE77E0D1BB5C6D100E30B15 /* MainMenu.xib */; };
+		1EE77E1A1BB5C6D200E30B15 /* MobTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE77E191BB5C6D200E30B15 /* MobTimerTests.swift */; };
+		1EE77E251BB5C6D200E30B15 /* MobTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE77E241BB5C6D200E30B15 /* MobTimerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1EE77E161BB5C6D200E30B15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EE77DFE1BB5C6D100E30B15 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EE77E051BB5C6D100E30B15;
+			remoteInfo = MobTimer;
+		};
+		1EE77E211BB5C6D200E30B15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EE77DFE1BB5C6D100E30B15 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EE77E051BB5C6D100E30B15;
+			remoteInfo = MobTimer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1EE77E061BB5C6D100E30B15 /* MobTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EE77E091BB5C6D100E30B15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1EE77E0B1BB5C6D100E30B15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1EE77E0E1BB5C6D100E30B15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		1EE77E101BB5C6D100E30B15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EE77E151BB5C6D200E30B15 /* MobTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EE77E191BB5C6D200E30B15 /* MobTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobTimerTests.swift; sourceTree = "<group>"; };
+		1EE77E1B1BB5C6D200E30B15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EE77E201BB5C6D200E30B15 /* MobTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EE77E241BB5C6D200E30B15 /* MobTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobTimerUITests.swift; sourceTree = "<group>"; };
+		1EE77E261BB5C6D200E30B15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1EE77E031BB5C6D100E30B15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EE77E121BB5C6D200E30B15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EE77E1D1BB5C6D200E30B15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1EE77DFD1BB5C6D100E30B15 = {
+			isa = PBXGroup;
+			children = (
+				1EE77E081BB5C6D100E30B15 /* MobTimer */,
+				1EE77E181BB5C6D200E30B15 /* MobTimerTests */,
+				1EE77E231BB5C6D200E30B15 /* MobTimerUITests */,
+				1EE77E071BB5C6D100E30B15 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1EE77E071BB5C6D100E30B15 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1EE77E061BB5C6D100E30B15 /* MobTimer.app */,
+				1EE77E151BB5C6D200E30B15 /* MobTimerTests.xctest */,
+				1EE77E201BB5C6D200E30B15 /* MobTimerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1EE77E081BB5C6D100E30B15 /* MobTimer */ = {
+			isa = PBXGroup;
+			children = (
+				1EE77E091BB5C6D100E30B15 /* AppDelegate.swift */,
+				1EE77E0B1BB5C6D100E30B15 /* Assets.xcassets */,
+				1EE77E0D1BB5C6D100E30B15 /* MainMenu.xib */,
+				1EE77E101BB5C6D100E30B15 /* Info.plist */,
+			);
+			path = MobTimer;
+			sourceTree = "<group>";
+		};
+		1EE77E181BB5C6D200E30B15 /* MobTimerTests */ = {
+			isa = PBXGroup;
+			children = (
+				1EE77E191BB5C6D200E30B15 /* MobTimerTests.swift */,
+				1EE77E1B1BB5C6D200E30B15 /* Info.plist */,
+			);
+			path = MobTimerTests;
+			sourceTree = "<group>";
+		};
+		1EE77E231BB5C6D200E30B15 /* MobTimerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1EE77E241BB5C6D200E30B15 /* MobTimerUITests.swift */,
+				1EE77E261BB5C6D200E30B15 /* Info.plist */,
+			);
+			path = MobTimerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1EE77E051BB5C6D100E30B15 /* MobTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EE77E291BB5C6D200E30B15 /* Build configuration list for PBXNativeTarget "MobTimer" */;
+			buildPhases = (
+				1EE77E021BB5C6D100E30B15 /* Sources */,
+				1EE77E031BB5C6D100E30B15 /* Frameworks */,
+				1EE77E041BB5C6D100E30B15 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MobTimer;
+			productName = MobTimer;
+			productReference = 1EE77E061BB5C6D100E30B15 /* MobTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1EE77E141BB5C6D200E30B15 /* MobTimerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EE77E2C1BB5C6D200E30B15 /* Build configuration list for PBXNativeTarget "MobTimerTests" */;
+			buildPhases = (
+				1EE77E111BB5C6D200E30B15 /* Sources */,
+				1EE77E121BB5C6D200E30B15 /* Frameworks */,
+				1EE77E131BB5C6D200E30B15 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1EE77E171BB5C6D200E30B15 /* PBXTargetDependency */,
+			);
+			name = MobTimerTests;
+			productName = MobTimerTests;
+			productReference = 1EE77E151BB5C6D200E30B15 /* MobTimerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1EE77E1F1BB5C6D200E30B15 /* MobTimerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EE77E2F1BB5C6D200E30B15 /* Build configuration list for PBXNativeTarget "MobTimerUITests" */;
+			buildPhases = (
+				1EE77E1C1BB5C6D200E30B15 /* Sources */,
+				1EE77E1D1BB5C6D200E30B15 /* Frameworks */,
+				1EE77E1E1BB5C6D200E30B15 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1EE77E221BB5C6D200E30B15 /* PBXTargetDependency */,
+			);
+			name = MobTimerUITests;
+			productName = MobTimerUITests;
+			productReference = 1EE77E201BB5C6D200E30B15 /* MobTimerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1EE77DFE1BB5C6D100E30B15 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Yu Wang";
+				TargetAttributes = {
+					1EE77E051BB5C6D100E30B15 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					1EE77E141BB5C6D200E30B15 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 1EE77E051BB5C6D100E30B15;
+					};
+					1EE77E1F1BB5C6D200E30B15 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 1EE77E051BB5C6D100E30B15;
+					};
+				};
+			};
+			buildConfigurationList = 1EE77E011BB5C6D100E30B15 /* Build configuration list for PBXProject "MobTimer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1EE77DFD1BB5C6D100E30B15;
+			productRefGroup = 1EE77E071BB5C6D100E30B15 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1EE77E051BB5C6D100E30B15 /* MobTimer */,
+				1EE77E141BB5C6D200E30B15 /* MobTimerTests */,
+				1EE77E1F1BB5C6D200E30B15 /* MobTimerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1EE77E041BB5C6D100E30B15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EE77E0C1BB5C6D100E30B15 /* Assets.xcassets in Resources */,
+				1EE77E0F1BB5C6D100E30B15 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EE77E131BB5C6D200E30B15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EE77E1E1BB5C6D200E30B15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1EE77E021BB5C6D100E30B15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EE77E0A1BB5C6D100E30B15 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EE77E111BB5C6D200E30B15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EE77E1A1BB5C6D200E30B15 /* MobTimerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EE77E1C1BB5C6D200E30B15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EE77E251BB5C6D200E30B15 /* MobTimerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1EE77E171BB5C6D200E30B15 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1EE77E051BB5C6D100E30B15 /* MobTimer */;
+			targetProxy = 1EE77E161BB5C6D200E30B15 /* PBXContainerItemProxy */;
+		};
+		1EE77E221BB5C6D200E30B15 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1EE77E051BB5C6D100E30B15 /* MobTimer */;
+			targetProxy = 1EE77E211BB5C6D200E30B15 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1EE77E0D1BB5C6D100E30B15 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1EE77E0E1BB5C6D100E30B15 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1EE77E271BB5C6D200E30B15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1EE77E281BB5C6D200E30B15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1EE77E2A1BB5C6D200E30B15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MobTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangyuhere.MobTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1EE77E2B1BB5C6D200E30B15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MobTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangyuhere.MobTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1EE77E2D1BB5C6D200E30B15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MobTimerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangyuhere.MobTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MobTimer.app/Contents/MacOS/MobTimer";
+			};
+			name = Debug;
+		};
+		1EE77E2E1BB5C6D200E30B15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MobTimerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangyuhere.MobTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MobTimer.app/Contents/MacOS/MobTimer";
+			};
+			name = Release;
+		};
+		1EE77E301BB5C6D200E30B15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MobTimerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangyuhere.MobTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MobTimer;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		1EE77E311BB5C6D200E30B15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MobTimerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangyuhere.MobTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MobTimer;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1EE77E011BB5C6D100E30B15 /* Build configuration list for PBXProject "MobTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EE77E271BB5C6D200E30B15 /* Debug */,
+				1EE77E281BB5C6D200E30B15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1EE77E291BB5C6D200E30B15 /* Build configuration list for PBXNativeTarget "MobTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EE77E2A1BB5C6D200E30B15 /* Debug */,
+				1EE77E2B1BB5C6D200E30B15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1EE77E2C1BB5C6D200E30B15 /* Build configuration list for PBXNativeTarget "MobTimerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EE77E2D1BB5C6D200E30B15 /* Debug */,
+				1EE77E2E1BB5C6D200E30B15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1EE77E2F1BB5C6D200E30B15 /* Build configuration list for PBXNativeTarget "MobTimerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EE77E301BB5C6D200E30B15 /* Debug */,
+				1EE77E311BB5C6D200E30B15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1EE77DFE1BB5C6D100E30B15 /* Project object */;
+}

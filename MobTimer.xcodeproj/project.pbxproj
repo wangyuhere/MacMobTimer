@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E5507A31BB7083C006B126A /* MobTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5507A21BB7083C006B126A /* MobTimer.swift */; settings = {ASSET_TAGS = (); }; };
+		1E5507A71BB954DA006B126A /* Glass.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1E5507A61BB954DA006B126A /* Glass.aiff */; settings = {ASSET_TAGS = (); }; };
+		1E5507A91BB9AF23006B126A /* Basso.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1E5507A81BB9AF23006B126A /* Basso.aiff */; settings = {ASSET_TAGS = (); }; };
 		1EE77E0A1BB5C6D100E30B15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE77E091BB5C6D100E30B15 /* AppDelegate.swift */; };
 		1EE77E0C1BB5C6D100E30B15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EE77E0B1BB5C6D100E30B15 /* Assets.xcassets */; };
 		1EE77E0F1BB5C6D100E30B15 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE77E0D1BB5C6D100E30B15 /* MainMenu.xib */; };
@@ -32,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E5507A21BB7083C006B126A /* MobTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobTimer.swift; sourceTree = "<group>"; };
+		1E5507A61BB954DA006B126A /* Glass.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Glass.aiff; sourceTree = "<group>"; };
+		1E5507A81BB9AF23006B126A /* Basso.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Basso.aiff; sourceTree = "<group>"; };
 		1EE77E061BB5C6D100E30B15 /* MobTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EE77E091BB5C6D100E30B15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EE77E0B1BB5C6D100E30B15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,8 +101,11 @@
 			children = (
 				1EE77E091BB5C6D100E30B15 /* AppDelegate.swift */,
 				1EE77E0B1BB5C6D100E30B15 /* Assets.xcassets */,
+				1E5507A81BB9AF23006B126A /* Basso.aiff */,
+				1E5507A61BB954DA006B126A /* Glass.aiff */,
 				1EE77E0D1BB5C6D100E30B15 /* MainMenu.xib */,
 				1EE77E101BB5C6D100E30B15 /* Info.plist */,
+				1E5507A21BB7083C006B126A /* MobTimer.swift */,
 			);
 			path = MobTimer;
 			sourceTree = "<group>";
@@ -222,7 +231,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E5507A71BB954DA006B126A /* Glass.aiff in Resources */,
 				1EE77E0C1BB5C6D100E30B15 /* Assets.xcassets in Resources */,
+				1E5507A91BB9AF23006B126A /* Basso.aiff in Resources */,
 				1EE77E0F1BB5C6D100E30B15 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E5507A31BB7083C006B126A /* MobTimer.swift in Sources */,
 				1EE77E0A1BB5C6D100E30B15 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,6 +482,7 @@
 				1EE77E2B1BB5C6D200E30B15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1EE77E2C1BB5C6D200E30B15 /* Build configuration list for PBXNativeTarget "MobTimerTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +491,7 @@
 				1EE77E2E1BB5C6D200E30B15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1EE77E2F1BB5C6D200E30B15 /* Build configuration list for PBXNativeTarget "MobTimerUITests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +500,7 @@
 				1EE77E311BB5C6D200E30B15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

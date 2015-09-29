@@ -45,7 +45,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDataSource {
     }
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        window.collectionBehavior = NSWindowCollectionBehavior.CanJoinAllSpaces
         playerRemove.enabled = false
         timerDisplay.stringValue = mobTimer.timeInfo
         

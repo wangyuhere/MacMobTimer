@@ -28,6 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDataSource {
     @IBOutlet weak var playerName: NSTextField!
     
     weak var timer: NSTimer?
+    var activity: NSObjectProtocol?
     var audioPlayer: AVAudioPlayer!
     var mobTimer = MobTimer()
     var selectedPlayerId = -1
@@ -45,6 +46,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDataSource {
     }
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        let options = NSActivityOptions(
+            rawValue: NSActivityOptions.UserInitiated.rawValue | NSActivityOptions.IdleSystemSleepDisabled.rawValue
+        )
+        activity = NSProcessInfo().beginActivityWithOptions(options, reason: "start timer")
+
         playerRemove.enabled = false
         timerDisplay.stringValue = mobTimer.timeInfo
         
@@ -64,10 +70,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDataSource {
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
-        // Insert code here to tear down your application
+        if let a = activity {
+            NSProcessInfo().endActivity(a)
+        }
     }
-    
-    
+
     func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
         return true
     }

@@ -17,6 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDataSource {
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var nextBreakMessage: NSTextField!
     @IBOutlet weak var message: NSTextField!
+    @IBOutlet weak var tips: NSTextField!
     @IBOutlet weak var driver: NSTextField!
     @IBOutlet weak var timerTimeInput: NSTextField!
     @IBOutlet weak var timerDisplay: NSTextField!
@@ -28,6 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDataSource {
     @IBOutlet weak var playerName: NSTextField!
     
     weak var timer: NSTimer?
+    var preferencesWindow: PreferencesWindowController?
     var activity: NSObjectProtocol?
     var audioPlayer: AVAudioPlayer!
     var mobTimer = MobTimer()
@@ -46,11 +48,25 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDataSource {
     }
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        appInit()
+    }
+
+    func applicationWillTerminate(aNotification: NSNotification) {
+        if let a = activity {
+            NSProcessInfo().endActivity(a)
+        }
+    }
+
+    func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
+        return true
+    }
+    
+    func appInit() {
         let options = NSActivityOptions(
             rawValue: NSActivityOptions.UserInitiated.rawValue | NSActivityOptions.IdleSystemSleepDisabled.rawValue
         )
         activity = NSProcessInfo().beginActivityWithOptions(options, reason: "start timer")
-
+        
         playerRemove.enabled = false
         timerDisplay.stringValue = mobTimer.timeInfo
         
@@ -67,16 +83,41 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTableViewDataSource {
         updateDriverInfo()
         updateMessage()
         timer = startTimer()
+        
+        addGlobalShortcut()
+        MobTimer.initDefaults()
     }
-
-    func applicationWillTerminate(aNotification: NSNotification) {
-        if let a = activity {
-            NSProcessInfo().endActivity(a)
+    
+    func addGlobalShortcut() {
+        let accessEnabled = AXIsProcessTrustedWithOptions(
+            [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true])
+        if accessEnabled {
+            NSEvent.addGlobalMonitorForEventsMatchingMask(NSEventMask.KeyDownMask, handler: self.handleEvent)
+            tips.stringValue = "Press Cmd-alt-ctrl-shift-p to start/pause"
+        }
+        NSEvent.addLocalMonitorForEventsMatchingMask(NSEventMask.KeyDownMask, handler: self.handleLocalEvent)
+    }
+    
+    func handleLocalEvent(event: NSEvent) -> NSEvent {
+        handleEvent(event)
+        return event
+    }
+    
+    func handleEvent(event: NSEvent) {
+        if event.modifierFlags.contains(NSEventModifierFlags.CommandKeyMask)
+        && event.modifierFlags.contains(NSEventModifierFlags.AlternateKeyMask)
+        && event.modifierFlags.contains(NSEventModifierFlags.ShiftKeyMask)
+        && event.modifierFlags.contains(NSEventModifierFlags.ControlKeyMask)
+        && event.charactersIgnoringModifiers != nil
+        && event.charactersIgnoringModifiers == "P" {
+            
+            timerStarted(self)
         }
     }
-
-    func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
-        return true
+    
+    @IBAction func preferencesClicked(sender: AnyObject) {
+        preferencesWindow = PreferencesWindowController(windowNibName: "PreferencesWindowController")
+        preferencesWindow?.showWindow(sender)
     }
 
     @IBAction func timerStarted(sender: AnyObject) {

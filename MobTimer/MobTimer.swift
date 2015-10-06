@@ -9,7 +9,7 @@
 import Foundation
 
 class MobTimer {
-    struct Player {
+    class Player: NSObject, NSCoding {
         var name: String
         var keyboard: String
         
@@ -17,31 +17,90 @@ class MobTimer {
             self.name = name
             self.keyboard = keyboard
         }
+
+        required init(coder aDecoder: NSCoder) {
+            name = aDecoder.decodeObjectForKey("name") as! String
+            keyboard = aDecoder.decodeObjectForKey("keyboard") as! String
+        }
+
+        func encodeWithCoder(aCoder: NSCoder) {
+            aCoder.encodeObject(name, forKey: "name")
+            aCoder.encodeObject(keyboard, forKey: "keyboard")
+        }
+
+        override func isEqual(object: AnyObject?) -> Bool {
+            if let object = object as? Player {
+                return name == object.name
+            } else {
+                return false
+            }
+        }
+
+        override var hash: Int {
+            return name.hashValue
+        }
     }
     
     enum State {
         case Started, Stopped, Break
     }
-    
+
+    static let defaults = NSUserDefaults()
+
+    static var timeInterval: Int {
+        return Int(defaults.valueForKey("driverTime") as! Double * 60)
+    }
+
+    static var breakInterval: Int {
+        return Int(defaults.valueForKey("breakInterval") as! Double * 60)
+    }
+
     private var state: State
     private var curTime: Int
     private var timeToBreak: Int
     private var timeInterval: Int
     private var breakInterval: Int
+    private let defaults = NSUserDefaults()
     
     var players: [Player]
     
-    init(timeInterval: Int, breakInterval: Int) {
+    static func initDefaults() {
+        let configs = [
+            "driverTime": 10.0,
+            "breakInterval": 45.0,
+        ]
+
+        
+        for (key, value) in configs {
+            if defaults.valueForKey(key) == nil {
+                defaults.setDouble(value, forKey: key)
+            }
+        }
+
+        if defaults.valueForKey("players") == nil {
+            let players = [
+                Player(name: "Yu", keyboard: "Swedish - Pro"),
+                Player(name: "Jan", keyboard: "Swedish - Pro"),
+                Player(name: "Nicolas", keyboard: "U.S."),
+                Player(name: "Lukas", keyboard: "U.S."),
+                Player(name: "Trond", keyboard: "U.S."),
+            ]
+            defaults.setObject(NSKeyedArchiver.archivedDataWithRootObject(players), forKey: "players")
+        }
+    }
+
+    init() {
+        MobTimer.initDefaults()
+
+        let timeInterval = MobTimer.timeInterval
+        let breakInterval = MobTimer.breakInterval
+
         self.state = State.Stopped
         self.timeInterval = timeInterval
         self.breakInterval = breakInterval
         self.curTime = timeInterval
         self.timeToBreak = breakInterval
-        self.players = [Player]()
-    }
-    
-    convenience init() {
-        self.init(timeInterval: 10 * 60, breakInterval: 50 * 60)
+        self.players = NSKeyedUnarchiver.unarchiveObjectWithData(defaults.valueForKey("players") as! NSData) as! [Player]
     }
     
     var timeInfo: String {
@@ -59,6 +118,10 @@ class MobTimer {
         
         return players[0]
     }
+
+    func savePlayers() {
+        defaults.setObject(NSKeyedArchiver.archivedDataWithRootObject(players), forKey: "players")
+    }
     
     func addPlayer(name: String, keyboard: String) -> Player {
         let player = Player(name: name, keyboard: keyboard)
@@ -70,7 +133,10 @@ class MobTimer {
         players.removeAtIndex(id)
     }
     
-    func resetTime(timeInterval: Int, breakInterval: Int) {
+    func resetTime() {
+        let timeInterval = MobTimer.timeInterval
+        let breakInterval = MobTimer.breakInterval
+
         self.state = State.Stopped
         self.timeInterval = timeInterval
         self.breakInterval = breakInterval

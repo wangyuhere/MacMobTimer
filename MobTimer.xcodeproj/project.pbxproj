@@ -10,6 +10,10 @@
 		1E5507A31BB7083C006B126A /* MobTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5507A21BB7083C006B126A /* MobTimer.swift */; settings = {ASSET_TAGS = (); }; };
 		1E5507A71BB954DA006B126A /* Glass.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1E5507A61BB954DA006B126A /* Glass.aiff */; settings = {ASSET_TAGS = (); }; };
 		1E5507A91BB9AF23006B126A /* Basso.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1E5507A81BB9AF23006B126A /* Basso.aiff */; settings = {ASSET_TAGS = (); }; };
+		1EB773131BC27A090093B62C /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB773111BC27A090093B62C /* PreferencesWindowController.swift */; settings = {ASSET_TAGS = (); }; };
+		1EB773141BC27A090093B62C /* PreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EB773121BC27A090093B62C /* PreferencesWindowController.xib */; settings = {ASSET_TAGS = (); }; };
+		1EB7731B1BC2ED8B0093B62C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB773191BC2ED8B0093B62C /* MainViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1EB7731C1BC2ED8B0093B62C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7731A1BC2ED8B0093B62C /* MainViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		1EE77E0A1BB5C6D100E30B15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE77E091BB5C6D100E30B15 /* AppDelegate.swift */; };
 		1EE77E0C1BB5C6D100E30B15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EE77E0B1BB5C6D100E30B15 /* Assets.xcassets */; };
 		1EE77E0F1BB5C6D100E30B15 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE77E0D1BB5C6D100E30B15 /* MainMenu.xib */; };
@@ -38,6 +42,10 @@
 		1E5507A21BB7083C006B126A /* MobTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobTimer.swift; sourceTree = "<group>"; };
 		1E5507A61BB954DA006B126A /* Glass.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Glass.aiff; sourceTree = "<group>"; };
 		1E5507A81BB9AF23006B126A /* Basso.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Basso.aiff; sourceTree = "<group>"; };
+		1EB773111BC27A090093B62C /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
+		1EB773121BC27A090093B62C /* PreferencesWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindowController.xib; sourceTree = "<group>"; };
+		1EB773191BC2ED8B0093B62C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1EB7731A1BC2ED8B0093B62C /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		1EE77E061BB5C6D100E30B15 /* MobTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EE77E091BB5C6D100E30B15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EE77E0B1BB5C6D100E30B15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,6 +107,8 @@
 		1EE77E081BB5C6D100E30B15 /* MobTimer */ = {
 			isa = PBXGroup;
 			children = (
+				1EB773191BC2ED8B0093B62C /* MainViewController.swift */,
+				1EB7731A1BC2ED8B0093B62C /* MainViewController.xib */,
 				1EE77E091BB5C6D100E30B15 /* AppDelegate.swift */,
 				1EE77E0B1BB5C6D100E30B15 /* Assets.xcassets */,
 				1E5507A81BB9AF23006B126A /* Basso.aiff */,
@@ -106,6 +116,8 @@
 				1EE77E0D1BB5C6D100E30B15 /* MainMenu.xib */,
 				1EE77E101BB5C6D100E30B15 /* Info.plist */,
 				1E5507A21BB7083C006B126A /* MobTimer.swift */,
+				1EB773111BC27A090093B62C /* PreferencesWindowController.swift */,
+				1EB773121BC27A090093B62C /* PreferencesWindowController.xib */,
 			);
 			path = MobTimer;
 			sourceTree = "<group>";
@@ -233,8 +245,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E5507A71BB954DA006B126A /* Glass.aiff in Resources */,
+				1EB7731C1BC2ED8B0093B62C /* MainViewController.xib in Resources */,
 				1EE77E0C1BB5C6D100E30B15 /* Assets.xcassets in Resources */,
 				1E5507A91BB9AF23006B126A /* Basso.aiff in Resources */,
+				1EB773141BC27A090093B62C /* PreferencesWindowController.xib in Resources */,
 				1EE77E0F1BB5C6D100E30B15 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,8 +274,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EB773131BC27A090093B62C /* PreferencesWindowController.swift in Sources */,
 				1E5507A31BB7083C006B126A /* MobTimer.swift in Sources */,
 				1EE77E0A1BB5C6D100E30B15 /* AppDelegate.swift in Sources */,
+				1EB7731B1BC2ED8B0093B62C /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

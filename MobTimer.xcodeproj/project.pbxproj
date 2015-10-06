@@ -14,6 +14,13 @@
 		1EB773141BC27A090093B62C /* PreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EB773121BC27A090093B62C /* PreferencesWindowController.xib */; settings = {ASSET_TAGS = (); }; };
 		1EB7731B1BC2ED8B0093B62C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB773191BC2ED8B0093B62C /* MainViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		1EB7731C1BC2ED8B0093B62C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7731A1BC2ED8B0093B62C /* MainViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		1EB773211BC3CBB60093B62C /* AddPlayerWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB7731F1BC3CBB60093B62C /* AddPlayerWindow.swift */; settings = {ASSET_TAGS = (); }; };
+		1EB773221BC3CBB60093B62C /* AddPlayerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EB773201BC3CBB60093B62C /* AddPlayerWindow.xib */; settings = {ASSET_TAGS = (); }; };
+		1EB773241BC400F10093B62C /* Funk.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1EB773231BC400F10093B62C /* Funk.aiff */; settings = {ASSET_TAGS = (); }; };
+		1EB773261BC406D40093B62C /* Frog.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1EB773251BC406D40093B62C /* Frog.aiff */; settings = {ASSET_TAGS = (); }; };
+		1EB773281BC406E00093B62C /* Bottle.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1EB773271BC406E00093B62C /* Bottle.aiff */; settings = {ASSET_TAGS = (); }; };
+		1EB7732A1BC406F00093B62C /* Morse.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1EB773291BC406F00093B62C /* Morse.aiff */; settings = {ASSET_TAGS = (); }; };
+		1EB7732C1BC406FC0093B62C /* Blow.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7732B1BC406FC0093B62C /* Blow.aiff */; settings = {ASSET_TAGS = (); }; };
 		1EE77E0A1BB5C6D100E30B15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE77E091BB5C6D100E30B15 /* AppDelegate.swift */; };
 		1EE77E0C1BB5C6D100E30B15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EE77E0B1BB5C6D100E30B15 /* Assets.xcassets */; };
 		1EE77E0F1BB5C6D100E30B15 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE77E0D1BB5C6D100E30B15 /* MainMenu.xib */; };
@@ -46,6 +53,13 @@
 		1EB773121BC27A090093B62C /* PreferencesWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindowController.xib; sourceTree = "<group>"; };
 		1EB773191BC2ED8B0093B62C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1EB7731A1BC2ED8B0093B62C /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		1EB7731F1BC3CBB60093B62C /* AddPlayerWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlayerWindow.swift; sourceTree = "<group>"; };
+		1EB773201BC3CBB60093B62C /* AddPlayerWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPlayerWindow.xib; sourceTree = "<group>"; };
+		1EB773231BC400F10093B62C /* Funk.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Funk.aiff; sourceTree = "<group>"; };
+		1EB773251BC406D40093B62C /* Frog.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Frog.aiff; sourceTree = "<group>"; };
+		1EB773271BC406E00093B62C /* Bottle.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Bottle.aiff; sourceTree = "<group>"; };
+		1EB773291BC406F00093B62C /* Morse.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Morse.aiff; sourceTree = "<group>"; };
+		1EB7732B1BC406FC0093B62C /* Blow.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Blow.aiff; sourceTree = "<group>"; };
 		1EE77E061BB5C6D100E30B15 /* MobTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EE77E091BB5C6D100E30B15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EE77E0B1BB5C6D100E30B15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,7 +102,12 @@
 			isa = PBXGroup;
 			children = (
 				1E5507A81BB9AF23006B126A /* Basso.aiff */,
+				1EB7732B1BC406FC0093B62C /* Blow.aiff */,
+				1EB773271BC406E00093B62C /* Bottle.aiff */,
+				1EB773251BC406D40093B62C /* Frog.aiff */,
+				1EB773231BC400F10093B62C /* Funk.aiff */,
 				1E5507A61BB954DA006B126A /* Glass.aiff */,
+				1EB773291BC406F00093B62C /* Morse.aiff */,
 			);
 			name = audio;
 			sourceTree = "<group>";
@@ -126,6 +145,8 @@
 				1E5507A21BB7083C006B126A /* MobTimer.swift */,
 				1EB773111BC27A090093B62C /* PreferencesWindowController.swift */,
 				1EB773121BC27A090093B62C /* PreferencesWindowController.xib */,
+				1EB7731F1BC3CBB60093B62C /* AddPlayerWindow.swift */,
+				1EB773201BC3CBB60093B62C /* AddPlayerWindow.xib */,
 			);
 			path = MobTimer;
 			sourceTree = "<group>";
@@ -253,9 +274,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E5507A71BB954DA006B126A /* Glass.aiff in Resources */,
+				1EB773241BC400F10093B62C /* Funk.aiff in Resources */,
 				1EB7731C1BC2ED8B0093B62C /* MainViewController.xib in Resources */,
+				1EB773261BC406D40093B62C /* Frog.aiff in Resources */,
 				1EE77E0C1BB5C6D100E30B15 /* Assets.xcassets in Resources */,
+				1EB773221BC3CBB60093B62C /* AddPlayerWindow.xib in Resources */,
+				1EB7732A1BC406F00093B62C /* Morse.aiff in Resources */,
 				1E5507A91BB9AF23006B126A /* Basso.aiff in Resources */,
+				1EB773281BC406E00093B62C /* Bottle.aiff in Resources */,
+				1EB7732C1BC406FC0093B62C /* Blow.aiff in Resources */,
 				1EB773141BC27A090093B62C /* PreferencesWindowController.xib in Resources */,
 				1EE77E0F1BB5C6D100E30B15 /* MainMenu.xib in Resources */,
 			);
@@ -284,6 +311,7 @@
 			files = (
 				1EB773131BC27A090093B62C /* PreferencesWindowController.swift in Sources */,
 				1E5507A31BB7083C006B126A /* MobTimer.swift in Sources */,
+				1EB773211BC3CBB60093B62C /* AddPlayerWindow.swift in Sources */,
 				1EE77E0A1BB5C6D100E30B15 /* AppDelegate.swift in Sources */,
 				1EB7731B1BC2ED8B0093B62C /* MainViewController.swift in Sources */,
 			);

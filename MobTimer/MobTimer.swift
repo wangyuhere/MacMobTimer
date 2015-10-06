@@ -48,12 +48,16 @@ class MobTimer {
     static let defaults = NSUserDefaults()
 
     static var timeInterval: Int {
-        return Int(defaults.valueForKey("driverTime") as! Double * 60)
+        return Int(defaults.doubleForKey("driverTime") * 60)
     }
 
     static var breakInterval: Int {
-        return Int(defaults.valueForKey("breakInterval") as! Double * 60)
+        return Int(defaults.doubleForKey("breakInterval") * 60)
     }
+
+    static let sounds = [
+        "Basso", "Blow", "Bottle", "Frog", "Funk", "Glass", "Morse"
+    ]
 
     private var state: State
     private var curTime: Int
@@ -63,6 +67,7 @@ class MobTimer {
     private let defaults = NSUserDefaults()
     
     var players: [Player]
+    var sound: String
     
     static func initDefaults() {
         let configs = [
@@ -70,7 +75,6 @@ class MobTimer {
             "breakInterval": 45.0,
         ]
 
-        
         for (key, value) in configs {
             if defaults.valueForKey(key) == nil {
                 defaults.setDouble(value, forKey: key)
@@ -87,6 +91,10 @@ class MobTimer {
             ]
             defaults.setObject(NSKeyedArchiver.archivedDataWithRootObject(players), forKey: "players")
         }
+
+        if defaults.valueForKey("sound") == nil {
+            defaults.setObject("Basso", forKey: "sound")
+        }
     }
 
     init() {
@@ -101,6 +109,7 @@ class MobTimer {
         self.curTime = timeInterval
         self.timeToBreak = breakInterval
         self.players = NSKeyedUnarchiver.unarchiveObjectWithData(defaults.valueForKey("players") as! NSData) as! [Player]
+        self.sound = defaults.valueForKey("sound") as! String
     }
     
     var timeInfo: String {
@@ -145,8 +154,11 @@ class MobTimer {
         }
     }
 
-    func savePlayers() {
+    func saveUserDefaults() {
+        defaults.setDouble(Double(timeInterval) / 60, forKey: "driverTime")
+        defaults.setDouble(Double(breakInterval) / 60, forKey: "breakInterval")
         defaults.setObject(NSKeyedArchiver.archivedDataWithRootObject(players), forKey: "players")
+        defaults.setObject(sound, forKey: "sound")
     }
     
     func addPlayer(name: String, keyboard: String) -> Player {

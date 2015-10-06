@@ -26,7 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         )
         activity = NSProcessInfo().beginActivityWithOptions(options, reason: "start timer")
 
-        mainViewController = MainViewController(nibName: "MainViewController", bundle: nil)
+        mainViewController = MainViewController(nibName: "MainViewController", bundle: NSBundle())
         mainViewController?.window = window
         window.contentView!.addSubview(mainViewController!.view)
         mainViewController!.view.frame = window.contentView!.bounds
@@ -40,34 +40,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
         return true
-    }
-
-    func addGlobalShortcut() {
-        let accessEnabled = AXIsProcessTrustedWithOptions(
-            [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true])
-        if accessEnabled {
-            NSEvent.addGlobalMonitorForEventsMatchingMask(NSEventMask.KeyDownMask, handler: self.handleEvent)
-        }
-        NSEvent.addLocalMonitorForEventsMatchingMask(NSEventMask.KeyDownMask, handler: self.handleLocalEvent)
-    }
-
-    func handleLocalEvent(event: NSEvent) -> NSEvent {
-        handleEvent(event)
-        return event
-    }
-    
-    func handleEvent(event: NSEvent) {
-        if event.modifierFlags.contains(NSEventModifierFlags.CommandKeyMask)
-        && event.modifierFlags.contains(NSEventModifierFlags.AlternateKeyMask)
-        && event.modifierFlags.contains(NSEventModifierFlags.ShiftKeyMask)
-        && event.modifierFlags.contains(NSEventModifierFlags.ControlKeyMask)
-        && event.charactersIgnoringModifiers != nil
-        && event.charactersIgnoringModifiers == "P" {
-            
-            if let controller = mainViewController {
-                controller.timerStarted(self)
-            }
-        }
     }
 
     @IBAction func toggleStartPause(sender: AnyObject) {

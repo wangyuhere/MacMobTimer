@@ -7,11 +7,9 @@
         <customObject id="-2" userLabel="File's Owner" customClass="MainViewController" customModule="MobTimer" customModuleProvider="target">
             <connections>
                 <outlet property="driver" destination="3V5-mh-kVs" id="O9E-tS-0ZM"/>
-                <outlet property="keyboardSelector" destination="LEM-uw-YCJ" id="R5d-my-NT4"/>
                 <outlet property="message" destination="2aF-iA-UYU" id="Ko5-JN-AsQ"/>
                 <outlet property="nextBreakMessage" destination="ach-Ou-d8a" id="TqR-Cs-ho7"/>
                 <outlet property="nextDriver" destination="bKT-n5-8Sv" id="NuM-v7-9YY"/>
-                <outlet property="playerName" destination="MDh-JH-jkr" id="Rql-4S-jV8"/>
                 <outlet property="playerRemove" destination="WWl-zE-4Ew" id="2M4-e6-ZEt"/>
                 <outlet property="players" destination="aMn-mE-o9v" id="2kW-xy-eu3"/>
                 <outlet property="tabView" destination="jNg-xI-MCp" id="95x-yL-W2D"/>
@@ -27,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <tabView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jNg-xI-MCp">
-                    <rect key="frame" x="9" y="10" width="338" height="376"/>
+                    <rect key="frame" x="13" y="10" width="338" height="376"/>
                     <animations/>
                     <font key="font" metaFont="system"/>
                     <tabViewItems>
@@ -124,13 +122,13 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2e-gV-ziB">
-                                        <rect key="frame" x="17" y="96" width="284" height="227"/>
+                                        <rect key="frame" x="17" y="58" width="284" height="265"/>
                                         <clipView key="contentView" ambiguous="YES" id="fgy-p7-ufH">
-                                            <rect key="frame" x="1" y="1" width="282" height="225"/>
+                                            <rect key="frame" x="1" y="1" width="282" height="263"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="15" rowSizeStyle="automatic" viewBased="YES" id="aMn-mE-o9v">
-                                                    <rect key="frame" x="0.0" y="0.0" width="282" height="225"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="282" height="263"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -194,19 +192,8 @@
                                             <animations/>
                                         </scroller>
                                     </scrollView>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Afj-M9-Ig7">
-                                        <rect key="frame" x="225" y="2" width="82" height="32"/>
-                                        <animations/>
-                                        <buttonCell key="cell" type="push" title="Add" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="t0Q-MF-m5B">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="addPlayer:" target="-2" id="jZn-pa-pWr"/>
-                                        </connections>
-                                    </button>
                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xcj-aH-C4A">
-                                        <rect key="frame" x="225" y="32" width="82" height="32"/>
+                                        <rect key="frame" x="11" y="10" width="82" height="32"/>
                                         <animations/>
                                         <buttonCell key="cell" type="push" title="Shuffle" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LLi-gU-L1R">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -216,37 +203,10 @@
                                             <action selector="shufflePlayers:" target="-2" id="mZ0-7D-oJo"/>
                                         </connections>
                                     </button>
-                                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MDh-JH-jkr">
-                                        <rect key="frame" x="83" y="38" width="126" height="22"/>
-                                        <animations/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="vgc-EQ-IIj">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="byQ-mE-XLB">
-                                        <rect key="frame" x="15" y="43" width="49" height="17"/>
-                                        <animations/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Name:" id="BQC-7O-pbs">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aq5-H8-grp">
-                                        <rect key="frame" x="15" y="11" width="70" height="17"/>
-                                        <animations/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Keyboard:" id="Crg-5t-iqf">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WWl-zE-4Ew">
-                                        <rect key="frame" x="281" y="68" width="20" height="20"/>
+                                        <rect key="frame" x="281" y="20" width="20" height="22"/>
                                         <animations/>
-                                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="WCf-5T-Ei3">
+                                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WCf-5T-Ei3">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -254,21 +214,17 @@
                                             <action selector="removePlayer:" target="-2" id="Csr-M1-sU8"/>
                                         </connections>
                                     </button>
-                                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LEM-uw-YCJ">
-                                        <rect key="frame" x="81" y="4" width="131" height="26"/>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nhk-vh-rfh">
+                                        <rect key="frame" x="263" y="20" width="20" height="22"/>
                                         <animations/>
-                                        <popUpButtonCell key="cell" type="push" title="sv" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="lyT-lm-HPY" id="wX4-yj-57V">
-                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="menu"/>
-                                            <menu key="menu" id="ED4-bO-7mN">
-                                                <items>
-                                                    <menuItem title="sv" state="on" id="lyT-lm-HPY"/>
-                                                    <menuItem title="Item 2" id="EVB-WU-SLK"/>
-                                                    <menuItem title="Item 3" id="8AS-3A-WSk"/>
-                                                </items>
-                                            </menu>
-                                        </popUpButtonCell>
-                                    </popUpButton>
+                                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kO8-cZ-aeL">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="addPlayer:" target="-2" id="kSZ-gU-pff"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <animations/>
                             </view>
@@ -282,6 +238,7 @@
     </objects>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
+        <image name="NSAddTemplate" width="11" height="11"/>
         <image name="NSRemoveTemplate" width="11" height="11"/>
     </resources>
 </document>

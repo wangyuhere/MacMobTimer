@@ -24,9 +24,8 @@ class MainViewController: NSViewController, NSTableViewDataSource {
     @IBOutlet weak var players: NSTableView!
 
     @IBOutlet weak var playerRemove: NSButton!
-    @IBOutlet weak var playerName: NSTextField!
-    @IBOutlet weak var keyboardSelector: NSPopUpButton!
 
+    var addPlayerWindow: AddPlayerWindow?
     var timer: NSTimer?
     var audioPlayer: AVAudioPlayer!
     var mobTimer = MobTimer()
@@ -35,17 +34,12 @@ class MainViewController: NSViewController, NSTableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        timerDisplay.stringValue = mobTimer.timeInfo
-
         playerRemove.enabled = false
 
         mobTimer.shuffle()
         players.reloadData()
 
-        initKeyboardSelector()
-
-        updateDriverInfo()
-        updateMessage()
+        updateUI()
         timer = startTimer()
     }
     
@@ -71,26 +65,36 @@ class MainViewController: NSViewController, NSTableViewDataSource {
     @IBAction func resetTimer(sender: AnyObject) {
         mobTimer.resetTime()
         window!.level = Int(CGWindowLevelForKey(CGWindowLevelKey.NormalWindowLevelKey))
-        updateInfo()
+        updateUI()
     }
 
     @IBAction func skipPlayer(sender: AnyObject) {
         mobTimer.skip()
         players.reloadData()
         timerStart.title = "Start"
-        updateInfo()
+        updateUI()
     }
 
     @IBAction func addPlayer(sender: AnyObject) {
-        let name = playerName.stringValue
-        if name.isEmpty {
-            return
+        if addPlayerWindow == nil {
+            addPlayerWindow = AddPlayerWindow(windowNibName: "AddPlayerWindow")
         }
 
-        let keyboard = keyboardSelector.selectedItem!.title
-        mobTimer.addPlayer(name, keyboard: keyboard)
-        players.reloadData()
-        playerName.stringValue = ""
+        let window = addPlayerWindow!.window!
+        let point = NSPoint(
+            x: self.window!.frame.midX - window.frame.size.width/2,
+            y: self.window!.frame.midY + window.frame.size.height/2
+        )
+        window.setFrameTopLeftPoint(point)
+        NSApp.runModalForWindow(window)
+
+        if addPlayerWindow!.name != "" {
+            let name = addPlayerWindow!.name
+            let keyboard = addPlayerWindow!.keyboard
+            mobTimer.addPlayer(name, keyboard: keyboard)
+            players.reloadData()
+        }
+        addPlayerWindow = nil
     }
 
     @IBAction func playerSelected(sender: AnyObject) {
@@ -124,10 +128,10 @@ class MainViewController: NSViewController, NSTableViewDataSource {
         }
 
         mobTimer.update()
-        updateInfo()
+        updateUI()
     }
 
-    func updateInfo() {
+    func updateUI() {
         timerDisplay.stringValue = String(mobTimer.timeInfo)
         if mobTimer.isBreak() {
             timerStart.enabled = false
@@ -137,26 +141,23 @@ class MainViewController: NSViewController, NSTableViewDataSource {
         } else {
             timerStart.title = "Pause"
         }
-        updateDriverInfo()
         updateMessage()
     }
 
-    func updateDriverInfo() {
+    func updateMessage() {
         if let player = mobTimer.driver {
             driver.stringValue = "Driver: " + player.name
         } else {
             driver.stringValue = "Break Time"
         }
-    }
-
-    func updateMessage() {
         message.stringValue = mobTimer.message
         nextBreakMessage.stringValue = mobTimer.nextPauseMessage
         nextDriver.stringValue = mobTimer.nextDriverMessage
     }
 
     func playSound() {
-        let alertSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("audio/Basso", ofType: "aiff")!)
+        let name = mobTimer.sound
+        let alertSound = NSBundle.mainBundle().URLForResource(name, withExtension: "aiff")!
 
         do {
             audioPlayer = try AVAudioPlayer(contentsOfURL: alertSound)
@@ -180,18 +181,6 @@ class MainViewController: NSViewController, NSTableViewDataSource {
                 TISSelectInputSource(source)
                 break
             }
-        }
-    }
-
-    func initKeyboardSelector() {
-        keyboardSelector.removeAllItems()
-        let allInputs = TISCreateInputSourceList(nil, false).takeRetainedValue()
-        let count = CFArrayGetCount(allInputs)
-
-        for (var i = 0; i < count; i++) {
-            let source = unsafeBitCast(CFArrayGetValueAtIndex(allInputs, i), TISInputSource.self)
-            let sourceLang = unsafeBitCast(TISGetInputSourceProperty(source, kTISPropertyLocalizedName), NSString.self) as String
-            keyboardSelector.addItemWithTitle(sourceLang)
         }
     }
 

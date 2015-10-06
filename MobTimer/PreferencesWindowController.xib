@@ -6,10 +6,11 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PreferencesWindowController" customModule="MobTimer" customModuleProvider="target">
             <connections>
-                <outlet property="breakFrequence" destination="tmq-LF-kRd" id="TEj-l9-z2c"/>
+                <outlet property="breakInterval" destination="tmq-LF-kRd" id="XnY-dl-YGp"/>
                 <outlet property="driverTime" destination="Vr5-Tf-dcy" id="4p7-fs-Q23"/>
                 <outlet property="playerRemove" destination="Yg0-cd-uK5" id="d8J-n6-avv"/>
                 <outlet property="playersTable" destination="QJK-wt-Len" id="IHa-Eq-KNq"/>
+                <outlet property="sounds" destination="oJq-Gm-M3U" id="ixK-Ip-teR"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -24,7 +25,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="530" height="336"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <userGuides>
-                    <userLayoutGuide location="157" affinity="minY"/>
+                    <userLayoutGuide location="159" affinity="minY"/>
                 </userGuides>
                 <subviews>
                     <tabView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RtR-KM-Ljw">
@@ -33,7 +34,7 @@
                         <font key="font" metaFont="system"/>
                         <tabViewItems>
                             <tabViewItem label="General" identifier="1" id="5Fu-l9-CFe">
-                                <view key="view" id="fJK-hX-mWI">
+                                <view key="view" ambiguous="YES" id="fJK-hX-mWI">
                                     <rect key="frame" x="10" y="33" width="484" height="274"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -59,9 +60,9 @@
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3xK-bg-YeN">
-                                            <rect key="frame" x="10" y="218" width="142" height="17"/>
+                                            <rect key="frame" x="10" y="218" width="125" height="17"/>
                                             <animations/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Break frequence (min):" id="bUM-rG-xJZ">
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Break interval (min):" id="bUM-rG-xJZ">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -76,15 +77,53 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="9dk-bb-VQy" name="value" keyPath="values.breakFrequence" id="hJ3-eD-XA5"/>
+                                                <binding destination="9dk-bb-VQy" name="value" keyPath="values.breakInterval" id="Ebu-ab-A7b"/>
                                             </connections>
+                                        </textField>
+                                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oJq-Gm-M3U">
+                                            <rect key="frame" x="183" y="174" width="101" height="26"/>
+                                            <animations/>
+                                            <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="eVp-TT-Bzt" id="irL-Fs-J8S">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="menu"/>
+                                                <menu key="menu" id="SHY-vk-3XT">
+                                                    <items>
+                                                        <menuItem title="Item 1" state="on" id="eVp-TT-Bzt"/>
+                                                        <menuItem title="Item 2" id="w4r-hq-u40"/>
+                                                        <menuItem title="Item 3" id="h6z-dJ-zUl"/>
+                                                    </items>
+                                                </menu>
+                                            </popUpButtonCell>
+                                            <connections>
+                                                <action selector="soundSelected:" target="-2" id="pVq-pM-wOe"/>
+                                            </connections>
+                                        </popUpButton>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RQC-Yu-37A">
+                                            <rect key="frame" x="283" y="170" width="81" height="32"/>
+                                            <animations/>
+                                            <buttonCell key="cell" type="push" title="Play" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CQE-u7-lty">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="playSound:" target="-2" id="Qf2-re-53z"/>
+                                            </connections>
+                                        </button>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w3c-lS-vlN">
+                                            <rect key="frame" x="10" y="177" width="142" height="17"/>
+                                            <animations/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Notify sound:" id="8JH-1B-19H">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
                                         </textField>
                                     </subviews>
                                     <animations/>
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="Players" identifier="2" id="JY3-Z0-GEU">
-                                <view key="view" ambiguous="YES" id="76b-pr-MCl">
+                                <view key="view" id="76b-pr-MCl">
                                     <rect key="frame" x="10" y="33" width="484" height="274"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -149,7 +188,7 @@
                                             </clipView>
                                             <animations/>
                                             <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="NWn-in-Cfc">
-                                                <rect key="frame" x="1" y="216" width="448" height="16"/>
+                                                <rect key="frame" x="1" y="-15" width="0.0" height="16"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <animations/>
                                             </scroller>
@@ -170,21 +209,16 @@
                                                 <action selector="playerRemoved:" target="-2" id="uh1-at-hPO"/>
                                             </connections>
                                         </button>
-                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZNB-3f-uTW">
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4v8-Xf-uFz">
                                             <rect key="frame" x="428" y="10" width="20" height="22"/>
                                             <animations/>
-                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ivS-e3-b4h">
+                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Fhq-ZJ-TXK">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
-                                        </button>
-                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="chz-co-oXi">
-                                            <rect key="frame" x="428" y="10" width="20" height="22"/>
-                                            <animations/>
-                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7M3-KH-PLa">
-                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
+                                            <connections>
+                                                <action selector="addPlayer:" target="-2" id="gCL-qc-EVF"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <animations/>

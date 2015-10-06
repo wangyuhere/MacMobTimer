@@ -119,6 +119,32 @@ class MobTimer {
         return players[0]
     }
 
+    var message: String {
+        if isStopped() {
+            if let player = driver {
+                return player.name + " please come to keyboard!"
+            } else {
+                return "Please add some players!"
+            }
+        } else if isBreak() {
+            return "Take a coffee or tea!"
+        } else {
+            return "Happy coding!"
+        }
+    }
+
+    var nextPauseMessage: String {
+        return "Next break in " + nextPause
+    }
+
+    var nextDriverMessage: String {
+        if players.count > 1 {
+            return "Next driver: " + players[1].name
+        } else {
+            return ""
+        }
+    }
+
     func savePlayers() {
         defaults.setObject(NSKeyedArchiver.archivedDataWithRootObject(players), forKey: "players")
     }

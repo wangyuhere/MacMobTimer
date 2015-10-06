@@ -14,9 +14,11 @@ class MainViewController: NSViewController, NSTableViewDataSource {
 
     var window: NSWindow?
 
+    @IBOutlet weak var tabView: NSTabView!
     @IBOutlet weak var message: NSTextField!
     @IBOutlet weak var nextBreakMessage: NSTextField!
     @IBOutlet weak var driver: NSTextField!
+    @IBOutlet weak var nextDriver: NSTextField!
     @IBOutlet weak var timerDisplay: NSTextField!
     @IBOutlet weak var timerStart: NSButton!
     @IBOutlet weak var players: NSTableView!
@@ -148,22 +150,13 @@ class MainViewController: NSViewController, NSTableViewDataSource {
     }
 
     func updateMessage() {
-        if mobTimer.isStopped() {
-            if let player = mobTimer.driver {
-                message.stringValue = player.name + " please come to keyboard!"
-            } else {
-                message.stringValue = "Please add some players!"
-            }
-        } else if mobTimer.isBreak() {
-            message.stringValue = "Take a coffee or tea!"
-        } else {
-            message.stringValue = "Happy coding!"
-        }
-        nextBreakMessage.stringValue = "Next break in " + mobTimer.nextPause
+        message.stringValue = mobTimer.message
+        nextBreakMessage.stringValue = mobTimer.nextPauseMessage
+        nextDriver.stringValue = mobTimer.nextDriverMessage
     }
 
     func playSound() {
-        let alertSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Basso", ofType: "aiff")!)
+        let alertSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("audio/Basso", ofType: "aiff")!)
 
         do {
             audioPlayer = try AVAudioPlayer(contentsOfURL: alertSound)
@@ -200,6 +193,14 @@ class MainViewController: NSViewController, NSTableViewDataSource {
             let sourceLang = unsafeBitCast(TISGetInputSourceProperty(source, kTISPropertyLocalizedName), NSString.self) as String
             keyboardSelector.addItemWithTitle(sourceLang)
         }
+    }
+
+    func showTimerPage() {
+        tabView.selectTabViewItemWithIdentifier("timer")
+    }
+
+    func showPlayersPage() {
+        tabView.selectTabViewItemWithIdentifier("players")
     }
 
     func numberOfRowsInTableView(aTableView: NSTableView) -> Int {

@@ -84,6 +84,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1EB7731E1BC3BDA10093B62C /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				1E5507A81BB9AF23006B126A /* Basso.aiff */,
+				1E5507A61BB954DA006B126A /* Glass.aiff */,
+			);
+			name = audio;
+			sourceTree = "<group>";
+		};
 		1EE77DFD1BB5C6D100E30B15 = {
 			isa = PBXGroup;
 			children = (
@@ -111,8 +120,7 @@
 				1EB7731A1BC2ED8B0093B62C /* MainViewController.xib */,
 				1EE77E091BB5C6D100E30B15 /* AppDelegate.swift */,
 				1EE77E0B1BB5C6D100E30B15 /* Assets.xcassets */,
-				1E5507A81BB9AF23006B126A /* Basso.aiff */,
-				1E5507A61BB954DA006B126A /* Glass.aiff */,
+				1EB7731E1BC3BDA10093B62C /* audio */,
 				1EE77E0D1BB5C6D100E30B15 /* MainMenu.xib */,
 				1EE77E101BB5C6D100E30B15 /* Info.plist */,
 				1E5507A21BB7083C006B126A /* MobTimer.swift */,

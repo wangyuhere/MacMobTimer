@@ -10,9 +10,11 @@
                 <outlet property="keyboardSelector" destination="LEM-uw-YCJ" id="R5d-my-NT4"/>
                 <outlet property="message" destination="2aF-iA-UYU" id="Ko5-JN-AsQ"/>
                 <outlet property="nextBreakMessage" destination="ach-Ou-d8a" id="TqR-Cs-ho7"/>
+                <outlet property="nextDriver" destination="bKT-n5-8Sv" id="NuM-v7-9YY"/>
                 <outlet property="playerName" destination="MDh-JH-jkr" id="Rql-4S-jV8"/>
                 <outlet property="playerRemove" destination="WWl-zE-4Ew" id="2M4-e6-ZEt"/>
                 <outlet property="players" destination="aMn-mE-o9v" id="2kW-xy-eu3"/>
+                <outlet property="tabView" destination="jNg-xI-MCp" id="95x-yL-W2D"/>
                 <outlet property="timerDisplay" destination="Ztq-w8-nNI" id="OdQ-O0-kHB"/>
                 <outlet property="timerStart" destination="N8e-gH-lw4" id="x6p-G0-LMg"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
@@ -29,7 +31,7 @@
                     <animations/>
                     <font key="font" metaFont="system"/>
                     <tabViewItems>
-                        <tabViewItem label="Timer" identifier="1" image="NSActionTemplate" id="Nnv-77-w58">
+                        <tabViewItem label="Timer" identifier="timer" image="NSActionTemplate" id="Nnv-77-w58">
                             <view key="view" id="5ZM-xd-pL6">
                                 <rect key="frame" x="10" y="33" width="318" height="330"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,7 +55,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2aF-iA-UYU">
-                                        <rect key="frame" x="15" y="109" width="288" height="17"/>
+                                        <rect key="frame" x="15" y="99" width="288" height="17"/>
                                         <animations/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Message" id="4Ah-yd-9eX">
                                             <font key="font" metaFont="system"/>
@@ -62,7 +64,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ach-Ou-d8a">
-                                        <rect key="frame" x="15" y="73" width="288" height="17"/>
+                                        <rect key="frame" x="15" y="62" width="288" height="17"/>
                                         <animations/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Next break:" id="4PW-W8-q61">
                                             <font key="font" metaFont="system"/>
@@ -81,17 +83,6 @@
                                             <action selector="resetTimer:" target="-2" id="zty-A9-5n8"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N8e-gH-lw4">
-                                        <rect key="frame" x="226" y="10" width="81" height="32"/>
-                                        <animations/>
-                                        <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OmT-ff-jSU">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="timerStarted:" target="-2" id="iDJ-lg-Lsb"/>
-                                        </connections>
-                                    </button>
                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yvx-a4-aS5">
                                         <rect key="frame" x="144" y="10" width="82" height="32"/>
                                         <animations/>
@@ -103,11 +94,31 @@
                                             <action selector="skipPlayer:" target="-2" id="yYj-5Z-o1b"/>
                                         </connections>
                                     </button>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N8e-gH-lw4">
+                                        <rect key="frame" x="226" y="10" width="81" height="32"/>
+                                        <animations/>
+                                        <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OmT-ff-jSU">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="timerStarted:" target="-2" id="iDJ-lg-Lsb"/>
+                                        </connections>
+                                    </button>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bKT-n5-8Sv">
+                                        <rect key="frame" x="15" y="146" width="288" height="17"/>
+                                        <animations/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Next driver:" id="tbO-cj-bfs">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
                                 </subviews>
                                 <animations/>
                             </view>
                         </tabViewItem>
-                        <tabViewItem label="Players" identifier="2" id="DwN-oa-sd4">
+                        <tabViewItem label="Players" identifier="players" id="DwN-oa-sd4">
                             <view key="view" ambiguous="YES" id="5W1-EN-9Be">
                                 <rect key="frame" x="10" y="33" width="318" height="330"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

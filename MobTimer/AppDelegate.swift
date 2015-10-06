@@ -19,7 +19,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var activity: NSObjectProtocol?
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        appInit()
+
+        // disable app nap on Mac, otherwise the timer is stopped when app is running at backgroud
+        let options = NSActivityOptions(
+            rawValue: NSActivityOptions.UserInitiated.rawValue | NSActivityOptions.IdleSystemSleepDisabled.rawValue
+        )
+        activity = NSProcessInfo().beginActivityWithOptions(options, reason: "start timer")
+
         mainViewController = MainViewController(nibName: "MainViewController", bundle: nil)
         mainViewController?.window = window
         window.contentView!.addSubview(mainViewController!.view)
@@ -34,14 +40,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
         return true
-    }
-    
-    func appInit() {
-        let options = NSActivityOptions(
-            rawValue: NSActivityOptions.UserInitiated.rawValue | NSActivityOptions.IdleSystemSleepDisabled.rawValue
-        )
-        activity = NSProcessInfo().beginActivityWithOptions(options, reason: "start timer")
-        MobTimer.initDefaults()
     }
 
     func addGlobalShortcut() {
@@ -70,6 +68,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 controller.timerStarted(self)
             }
         }
+    }
+
+    @IBAction func toggleStartPause(sender: AnyObject) {
+        if let controller = mainViewController {
+            controller.timerStarted(self)
+        }
+    }
+
+    @IBAction func skipPlayer(sender: AnyObject) {
+        mainViewController?.skipPlayer(self)
+    }
+
+    @IBAction func resetTimer(sender: AnyObject) {
+        mainViewController?.resetTimer(self)
+    }
+
+    @IBAction func showTimerPage(sender: AnyObject) {
+        mainViewController?.showTimerPage()
+    }
+
+    @IBAction func showPlayersPage(sender: AnyObject) {
+        mainViewController?.showPlayersPage()
     }
     
     @IBAction func preferencesClicked(sender: AnyObject) {

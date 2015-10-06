@@ -7,13 +7,51 @@
 //
 
 import Cocoa
+import Carbon
 
-class AddPlayerWindow: NSWindowController {
+class AddPlayerWindow: NSWindowController, NSWindowDelegate {
+
+    @IBOutlet weak var playerName: NSTextField!
+    @IBOutlet weak var keyboardSelector: NSPopUpButton!
+
+    var name = ""
+    var keyboard = ""
 
     override func windowDidLoad() {
         super.windowDidLoad()
 
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+        initKeyboardSelector()
     }
-    
+
+    func windowWillClose(notification: NSNotification) {
+        NSApp.stopModal()
+    }
+
+    @IBAction func addPlayer(sender: AnyObject) {
+        name = playerName.stringValue
+        if name.isEmpty {
+            return
+        }
+        keyboard = keyboardSelector.selectedItem!.title
+        
+        window?.close()
+    }
+
+    @IBAction func cancel(sender: AnyObject) {
+        name = ""
+        keyboard = ""
+        window?.close()
+    }
+
+    func initKeyboardSelector() {
+        keyboardSelector.removeAllItems()
+        let allInputs = TISCreateInputSourceList(nil, false).takeRetainedValue()
+        let count = CFArrayGetCount(allInputs)
+
+        for (var i = 0; i < count; i++) {
+            let source = unsafeBitCast(CFArrayGetValueAtIndex(allInputs, i), TISInputSource.self)
+            let sourceLang = unsafeBitCast(TISGetInputSourceProperty(source, kTISPropertyLocalizedName), NSString.self) as String
+            keyboardSelector.addItemWithTitle(sourceLang)
+        }
+    }
 }

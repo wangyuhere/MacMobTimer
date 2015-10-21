@@ -42,6 +42,10 @@ class MainViewController: NSViewController, NSTableViewDataSource {
         updateUI()
         timer = startTimer()
     }
+
+    override func viewDidDisappear() {
+        mobTimer.saveUserDefaults()
+    }
     
     @IBAction func timerStarted(sender: AnyObject) {
         if mobTimer.isBreak() {

@@ -180,6 +180,7 @@ class MobTimer {
         self.breakInterval = breakInterval
         self.curTime = timeInterval
         self.timeToBreak = breakInterval
+        self.sound = defaults.valueForKey("sound") as! String
     }
     
     func start() {

@@ -30,12 +30,12 @@
                     <font key="font" metaFont="system"/>
                     <tabViewItems>
                         <tabViewItem label="Timer" identifier="timer" image="NSActionTemplate" id="Nnv-77-w58">
-                            <view key="view" id="5ZM-xd-pL6">
-                                <rect key="frame" x="10" y="33" width="318" height="330"/>
+                            <view key="view" ambiguous="YES" id="5ZM-xd-pL6">
+                                <rect key="frame" x="10" y="33" width="129" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ztq-w8-nNI">
-                                        <rect key="frame" x="15" y="250" width="288" height="59"/>
+                                        <rect key="frame" x="15" y="-80" width="288" height="59"/>
                                         <animations/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="10:00" id="ThZ-Zf-bLk">
                                             <font key="font" size="48" name=".HelveticaNeueDeskInterface-Regular"/>
@@ -44,7 +44,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3V5-mh-kVs">
-                                        <rect key="frame" x="15" y="171" width="288" height="51"/>
+                                        <rect key="frame" x="15" y="-159" width="288" height="51"/>
                                         <animations/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Driver: " id="Vdy-KU-uEI">
                                             <font key="font" size="24" name=".HelveticaNeueDeskInterface-Regular"/>
@@ -53,7 +53,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2aF-iA-UYU">
-                                        <rect key="frame" x="15" y="99" width="288" height="17"/>
+                                        <rect key="frame" x="15" y="-231" width="288" height="17"/>
                                         <animations/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Message" id="4Ah-yd-9eX">
                                             <font key="font" metaFont="system"/>
@@ -62,7 +62,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ach-Ou-d8a">
-                                        <rect key="frame" x="15" y="62" width="288" height="17"/>
+                                        <rect key="frame" x="15" y="-268" width="288" height="17"/>
                                         <animations/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Next break:" id="4PW-W8-q61">
                                             <font key="font" metaFont="system"/>
@@ -71,7 +71,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L1X-jc-sXG">
-                                        <rect key="frame" x="11" y="10" width="82" height="32"/>
+                                        <rect key="frame" x="11" y="-320" width="82" height="32"/>
                                         <animations/>
                                         <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="t4u-db-y1I">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -82,7 +82,7 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yvx-a4-aS5">
-                                        <rect key="frame" x="144" y="10" width="82" height="32"/>
+                                        <rect key="frame" x="144" y="-320" width="82" height="32"/>
                                         <animations/>
                                         <buttonCell key="cell" type="push" title="Skip" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pTj-Bf-N3W">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -93,7 +93,7 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N8e-gH-lw4">
-                                        <rect key="frame" x="226" y="10" width="81" height="32"/>
+                                        <rect key="frame" x="226" y="-320" width="81" height="32"/>
                                         <animations/>
                                         <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OmT-ff-jSU">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -104,7 +104,7 @@
                                         </connections>
                                     </button>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bKT-n5-8Sv">
-                                        <rect key="frame" x="15" y="146" width="288" height="17"/>
+                                        <rect key="frame" x="15" y="-184" width="288" height="17"/>
                                         <animations/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Next driver:" id="tbO-cj-bfs">
                                             <font key="font" metaFont="system"/>
@@ -117,7 +117,7 @@
                             </view>
                         </tabViewItem>
                         <tabViewItem label="Players" identifier="players" id="DwN-oa-sd4">
-                            <view key="view" ambiguous="YES" id="5W1-EN-9Be">
+                            <view key="view" id="5W1-EN-9Be">
                                 <rect key="frame" x="10" y="33" width="318" height="330"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
